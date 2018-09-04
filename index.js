@@ -1,8 +1,8 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
-const typeDefs = require('./schema');
+const {typeDefs, resolvers} = require('./schema');
 
-const server = new ApolloServer({ typeDefs });
+const server = new ApolloServer({ typeDefs, resolvers });
 
 let app = express();
 server.applyMiddleware({app});
